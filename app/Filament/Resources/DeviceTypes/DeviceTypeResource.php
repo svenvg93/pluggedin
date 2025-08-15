@@ -6,9 +6,9 @@ use App\Enums\UserRole;
 use App\Filament\Resources\DeviceTypes\Pages\CreateDeviceType;
 use App\Filament\Resources\DeviceTypes\Pages\EditDeviceType;
 use App\Filament\Resources\DeviceTypes\Pages\ListDeviceTypes;
-use App\Filament\Resources\DeviceTypes\Schemas\DeviceTypesForm;
+use App\Filament\Resources\DeviceTypes\Schemas\DeviceTypeForm;
 use App\Filament\Resources\DeviceTypes\RelationManagers\DeviceModelsRelationManager;
-use App\Filament\Resources\DeviceTypes\Tables\DeviceTypesTable;
+use App\Filament\Resources\DeviceTypes\Tables\DeviceTypeTable;
 use App\Models\DeviceType;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -17,11 +17,13 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
 
-class DeviceTypesResource extends Resource
+class DeviceTypeResource extends Resource
 {
     protected static ?string $model = DeviceType::class;
 
-    protected static ?string $navigationLabel = 'Devices';
+    protected static ?string $slug = 'device-types';
+
+    protected static ?string $navigationLabel = 'Device Types';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::CircleStack;
 
@@ -39,12 +41,12 @@ class DeviceTypesResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components(DeviceTypesForm::schema());
+        return $schema->components(DeviceTypeForm::schema());
     }
 
     public static function table(Table $table): Table
     {
-        return DeviceTypesTable::configure($table);
+        return DeviceTypeTable::configure($table);
     }
 
     public static function getRelations(): array

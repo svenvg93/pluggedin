@@ -62,7 +62,11 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label('Settings'),
+                    ->label('Data')
+                    ->collapsible(false),
+                NavigationGroup::make()
+                    ->label('Settings')
+                    ->collapsible(false),
                 NavigationGroup::make()
                     ->label('Links')
                     ->collapsible(false),

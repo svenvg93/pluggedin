@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\DeviceType\Resources\DeviceModels\Pages;
+namespace App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Pages;
 
-use App\Filament\Resources\DeviceType\Resources\DeviceModels\DeviceModelResource;
+use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\DeviceModelResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateDeviceModel extends CreateRecord
@@ -11,7 +11,7 @@ class CreateDeviceModel extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['type_id'] = $this->getOwnerRecord()->id;
+        $data['type_id'] = $this->getParentRecord()->id;
         
         return $data;
     }

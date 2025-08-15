@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\DeviceType\Pages;
+namespace App\Filament\Resources\DeviceTypes\Pages;
 
-use App\Filament\Resources\DeviceType\DeviceTypeResource;
+use App\Filament\Resources\DeviceTypes\DeviceTypeResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\DeviceType\Resources\DeviceModels\Tables;
+namespace App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -13,7 +13,7 @@ use Filament\Tables\Columns\ColorColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class DeviceModelsTable
+class DeviceModelTable
 {
     public static function configure(Table $table): Table
     {

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('device_type', function (Blueprint $table) {
+        Schema::create('device_types', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();          // gateway, access point, etc.
             $table->string('color', 7)->nullable();    // #RRGGBB for charts
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('device_type');
+        Schema::dropIfExists('device_types');
     }
 };

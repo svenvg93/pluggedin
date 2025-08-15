@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\DeviceType\RelationManagers;
+namespace App\Filament\Resources\DeviceTypes\RelationManagers;
 
-use App\Filament\Resources\DeviceType\Resources\DeviceModels\DeviceModelResource;
-use App\Filament\Resources\DeviceType\Resources\DeviceModels\Tables\DeviceModelsTable;
+use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\DeviceModelResource;
+use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Tables\DeviceModelTable;
 use Filament\Actions\CreateAction;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Table;
@@ -16,7 +16,7 @@ class DeviceModelsRelationManager extends RelationManager
 
     public function table(Table $table): Table
     {
-        return DeviceModelsTable::configure($table);
+        return DeviceModelTable::configure($table);
 
     }
 }

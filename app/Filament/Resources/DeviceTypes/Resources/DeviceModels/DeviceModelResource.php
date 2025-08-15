@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\DeviceType\Resources\DeviceModels;
+namespace App\Filament\Resources\DeviceTypes\Resources\DeviceModels;
 
-use App\Filament\Resources\DeviceType\DeviceTypeResource;
-use App\Filament\Resources\DeviceType\Resources\DeviceModels\Pages\CreateDeviceModel;
-use App\Filament\Resources\DeviceType\Resources\DeviceModels\Pages\EditDeviceModel;
-use App\Filament\Resources\DeviceType\Resources\DeviceModels\Schemas\DeviceModelForm;
-use App\Filament\Resources\DeviceType\Resources\DeviceModels\Tables\DeviceModelsTable;
+use App\Filament\Resources\DeviceTypes\DeviceTypeResource;
+use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Pages\CreateDeviceModel;
+use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Pages\EditDeviceModel;
+use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Schemas\DeviceModelForm;
+use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Tables\DeviceModelTable;
 use App\Models\DeviceModel;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -31,7 +31,7 @@ class DeviceModelResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return DeviceModelsTable::configure($table);
+        return DeviceModelTable::configure($table);
     }
 
     public static function getRelations(): array

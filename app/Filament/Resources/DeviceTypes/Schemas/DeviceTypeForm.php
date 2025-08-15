@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\DeviceType\Schemas;
+namespace App\Filament\Resources\DeviceTypes\Schemas;
 
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Textarea;
@@ -8,7 +8,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
-class DeviceTypesForm
+class DeviceTypeForm
 {
     public static function schema(): array
     {
