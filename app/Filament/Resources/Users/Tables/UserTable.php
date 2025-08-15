@@ -12,7 +12,7 @@ use Filament\Tables\Table;
 
 class UserTable
 {
-    public static function table(Table $table): Table
+    public static function configure(Table $table): Table
     {
         return $table
             ->columns([

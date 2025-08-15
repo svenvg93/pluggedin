@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class DeviceTypes extends Model
+class DeviceType extends Model
 {
     protected $fillable = [
         'name',
@@ -16,4 +17,9 @@ class DeviceTypes extends Model
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
+
+    public function deviceModels(): HasMany
+    {
+        return $this->hasMany(DeviceModel::class, 'type_id');
+    }
 }

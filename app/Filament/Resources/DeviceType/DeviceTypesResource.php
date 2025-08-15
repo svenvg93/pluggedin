@@ -3,11 +3,13 @@
 namespace App\Filament\Resources\DeviceTypes;
 
 use App\Enums\UserRole;
-use App\Filament\Resources\DeviceTypes\Pages;
+use App\Filament\Resources\DeviceTypes\Pages\CreateDeviceType;
+use App\Filament\Resources\DeviceTypes\Pages\EditDeviceType;
 use App\Filament\Resources\DeviceTypes\Pages\ListDeviceTypes;
 use App\Filament\Resources\DeviceTypes\Schemas\DeviceTypesForm;
+use App\Filament\Resources\DeviceTypes\RelationManagers\DeviceModelsRelationManager;
 use App\Filament\Resources\DeviceTypes\Tables\DeviceTypesTable;
-use App\Models\DeviceTypes;
+use App\Models\DeviceType;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -17,9 +19,9 @@ use Illuminate\Support\Facades\Auth;
 
 class DeviceTypesResource extends Resource
 {
-    protected static ?string $model = DeviceTypes::class;
+    protected static ?string $model = DeviceType::class;
 
-    protected static ?string $navigationLabel = 'Device Types';
+    protected static ?string $navigationLabel = 'Devices';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::CircleStack;
 
@@ -45,10 +47,19 @@ class DeviceTypesResource extends Resource
         return DeviceTypesTable::configure($table);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            'deviceModels' => DeviceModelsRelationManager::class,
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
             'index' => ListDeviceTypes::route('/'),
+            'create' => CreateDeviceType::route('/create'),
+            'edit' => EditDeviceType::route('/{record}/edit'),
         ];
     }
 }

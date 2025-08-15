@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\DeviceTypes\Schemas;
+namespace App\Filament\Resources\DeviceType\Schemas;
 
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Textarea;
@@ -20,7 +20,7 @@ class DeviceTypesForm
                 ->label('Type'),
             ColorPicker::make('color')
                 ->required()
-                ->label('Device Color')
+                ->label('Color')
                 ->placeholder('#FFFFFF'),
             Textarea::make('comment')
                 ->label('Comment')

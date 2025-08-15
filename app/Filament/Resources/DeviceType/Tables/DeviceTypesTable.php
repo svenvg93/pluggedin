@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\DeviceTypes\Tables;
+namespace App\Filament\Resources\DeviceType\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -16,6 +16,7 @@ class DeviceTypesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->description('To manage device models, open the device type they belong to. When you edit a device type, you’ll see a table of its models where you can add, edit, or delete them.')
             ->columns([
                 TextColumn::make('id')
                     ->label('ID')

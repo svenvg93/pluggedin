@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('device_counts', function (Blueprint $table) {
+        Schema::create('device_count', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('model_id')->constrained('device_models')->cascadeOnDelete();
+            $table->foreignId('model_id')->constrained('device_model')->cascadeOnDelete();
             $table->date('recorded_at');
             $table->unsignedInteger('count')->default(0);
             $table->string('comment')->nullable();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('device_counts');
+        Schema::dropIfExists('device_count');
     }
 };

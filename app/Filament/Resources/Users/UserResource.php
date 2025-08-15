@@ -20,7 +20,7 @@ class UserResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::User;
 
-    protected static ?string $recordTitleAttribute = 'user';
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static string|\UnitEnum|null $navigationGroup = 'Settings';
 
@@ -38,7 +38,7 @@ class UserResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return UserTable::table($table);
+        return UserTable::configure($table);
     }
 
     public static function getRelations(): array
