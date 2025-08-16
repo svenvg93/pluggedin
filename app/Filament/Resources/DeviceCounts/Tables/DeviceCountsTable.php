@@ -2,18 +2,22 @@
 
 namespace App\Filament\Resources\DeviceCounts\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\EditAction;
+use App\Enums\UserRole;
 use Filament\Actions\ActionGroup;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 
 class DeviceCountsTable
 {
     public static function configure(Table $table): Table
     {
+        $isAdmin = Auth::user()?->role === UserRole::Admin;
+
         return $table
             ->columns([
                 TextColumn::make('id')
@@ -48,13 +52,16 @@ class DeviceCountsTable
             ])
             ->recordActions([
                 ActionGroup::make([
-                    EditAction::make(),
-                    DeleteAction::make(),
+                    EditAction::make()
+                        ->visible(fn (): bool => $isAdmin),
+                    DeleteAction::make()
+                        ->visible(fn (): bool => $isAdmin),
                 ]),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()
+                        ->visible(fn (): bool => $isAdmin),
                 ]),
             ]);
     }

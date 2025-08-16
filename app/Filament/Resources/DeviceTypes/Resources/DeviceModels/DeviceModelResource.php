@@ -3,8 +3,6 @@
 namespace App\Filament\Resources\DeviceTypes\Resources\DeviceModels;
 
 use App\Filament\Resources\DeviceTypes\DeviceTypeResource;
-use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Pages\CreateDeviceModel;
-use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Pages\EditDeviceModel;
 use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Schemas\DeviceModelForm;
 use App\Filament\Resources\DeviceTypes\Resources\DeviceModels\Tables\DeviceModelTable;
 use App\Models\DeviceModel;
@@ -44,8 +42,6 @@ class DeviceModelResource extends Resource
     public static function getPages(): array
     {
         return [
-            'create' => CreateDeviceModel::route('/create'),
-            'edit' => EditDeviceModel::route('/{record}/edit'),
         ];
     }
 }

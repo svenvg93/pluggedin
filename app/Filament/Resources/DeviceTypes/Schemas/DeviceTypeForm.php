@@ -5,8 +5,6 @@ namespace App\Filament\Resources\DeviceTypes\Schemas;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 
 class DeviceTypeForm
 {

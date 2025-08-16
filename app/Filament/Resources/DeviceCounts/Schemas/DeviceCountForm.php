@@ -3,8 +3,8 @@
 namespace App\Filament\Resources\DeviceCounts\Schemas;
 
 use App\Models\DeviceModel;
-use Filament\Forms\Components\DatePicker;
 use Carbon\Carbon;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
@@ -18,7 +18,9 @@ class DeviceCountForm
                 Select::make('model_id')
                     ->label('Device Model')
                     ->options(DeviceModel::with('deviceType')->get()->mapWithKeys(function ($model) {
-                        return [$model->id => $model->vendor . ' - ' . $model->name];
+                        $vendorName = $model->vendor;
+                        $displayName = $vendorName ? "{$vendorName} {$model->name}" : $model->name;
+                        return [$model->id => $displayName];
                     }))
                     ->required()
                     ->searchable()

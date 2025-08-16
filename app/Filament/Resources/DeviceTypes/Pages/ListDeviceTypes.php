@@ -28,6 +28,4 @@ class ListDeviceTypes extends ListRecords
     {
         return 'Manage device types and their associated models. Click on a device type to edit it and access the "Device Models" tab to manage its models.';
     }
-
-
 }

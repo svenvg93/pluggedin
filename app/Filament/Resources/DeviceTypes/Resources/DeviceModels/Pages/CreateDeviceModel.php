@@ -12,7 +12,7 @@ class CreateDeviceModel extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['type_id'] = $this->getParentRecord()->id;
-        
+
         return $data;
     }
 }

@@ -3,11 +3,10 @@
 namespace App\Filament\Resources\DeviceTypes;
 
 use App\Enums\UserRole;
-use App\Filament\Resources\DeviceTypes\Pages\CreateDeviceType;
 use App\Filament\Resources\DeviceTypes\Pages\EditDeviceType;
 use App\Filament\Resources\DeviceTypes\Pages\ListDeviceTypes;
-use App\Filament\Resources\DeviceTypes\Schemas\DeviceTypeForm;
 use App\Filament\Resources\DeviceTypes\RelationManagers\DeviceModelsRelationManager;
+use App\Filament\Resources\DeviceTypes\Schemas\DeviceTypeForm;
 use App\Filament\Resources\DeviceTypes\Tables\DeviceTypeTable;
 use App\Models\DeviceType;
 use BackedEnum;
@@ -60,7 +59,6 @@ class DeviceTypeResource extends Resource
     {
         return [
             'index' => ListDeviceTypes::route('/'),
-            'create' => CreateDeviceType::route('/create'),
             'edit' => EditDeviceType::route('/{record}/edit'),
         ];
     }
