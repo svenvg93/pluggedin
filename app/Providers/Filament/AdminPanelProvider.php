@@ -30,6 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->profile(isSimple: true)
             ->globalSearch(false)
+            ->databaseNotifications()
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -68,10 +69,6 @@ class AdminPanelProvider extends PanelProvider
                     ->url('https://docs.speedtest-tracker.dev/', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-book-open')
                     ->group('Links'),
-                //  NavigationItem::make('Donate')
-                //     ->url('https://github.com/sponsors/alexjustesen', shouldOpenInNewTab: true)
-                //     ->icon('heroicon-o-banknotes')
-                //     ->group('Links'),
                 NavigationItem::make(config('pluggedin.build_version'))
                     ->url('https://github.com/svenvg93/pluggedin', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-code-bracket')
