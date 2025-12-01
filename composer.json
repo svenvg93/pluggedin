@@ -1,14 +1,15 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "svenvg93/pluggedin",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Self-hosted Application to track device counts",
+    "keywords": ["laravel", "tracking"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "filament/actions": "^4.0",
-        "filament/filament": "^4.0",
+        "codewithdennis/filament-simple-alert": "^4.0",
+        "filament/actions": "4.1.0",
+        "filament/filament": "4.1.0",
         "laravel/framework": "^12.0",
         "laravel/pail": "^1.2",
         "laravel/tinker": "^2.10.1",
@@ -16,6 +17,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "laravel/boost": "^1.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
