@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "svenvg93/device-tracker",
+    "name": "svenvg93/pluggedin",
     "type": "project",
     "description": "Self-hosted Application to track device counts",
     "keywords": ["laravel", "tracking"],
